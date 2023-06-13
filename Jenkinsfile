@@ -1,23 +1,4 @@
-@Library('roboshop-shared-library') _
-pipeline {
-    agent any
-    stages {
+@Library('roboshop-shared-library@main') _
 
-        stage('Performing Lint Check') {
-                //when { branch pattern: "feature-.*", comparator: "REGEXP"}
-                    steps {
-                        script {
-                            nodejs.lintchecks()
-                        }
-
-
-                    }
-        }
-        stage('Downloading the dependencies') {
-            steps {
-                sh "npm install"
-            }
-        
-        }
-    }
-}
+env.COMPONENT = "cart"
+nodejs()
