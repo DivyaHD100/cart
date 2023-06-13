@@ -11,12 +11,12 @@ pipeline {
                         sh "node_modules/jslint/bin/jslint.js server.js"
                         //sh "echo PERFORMING LINT CHECKS"
                     }
-        stage('Downloading the dependencies'){
+        }
+        stage('Downloading the dependencies') {
             steps {
                 sh "npm install"
             }
         
         }
     }
-}
 }
